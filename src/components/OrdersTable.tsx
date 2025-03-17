@@ -144,7 +144,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({ orders, totalPages }) => {
         </table>
       </div>
       
-      <div className="flex justify-between items-center px-6 py-4 bg-white">
+      <div className="flex justify-between items-center px-6 py-4 bg-gray-100">
         <div className="flex items-center">
           <div className="flex space-x-1">
             {renderPagination()}
@@ -162,7 +162,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({ orders, totalPages }) => {
             id="rows-per-page"
             value={rowsPerPage}
             onChange={handleRowsPerPageChange}
-            className="border border-gray-300 rounded p-1 text-sm"
+            className="border border-gray-300 rounded p-1 text-sm p-1"
           >
             <option value={10}>10</option>
             <option value={20}>20</option>

@@ -1,11 +1,13 @@
-
 import React from 'react';
 
 const Logo: React.FC = () => {
   return (
-    <div className="az-logo">
-      <span className="text-azsuite-coral font-bold text-3xl">az</span>
-      <span className="text-azsuite-gray font-normal text-3xl"> suite</span>
+    <div className="az-logo flex justify-center items-center">
+      <img 
+        src="/az_suite_logo.webp" 
+        alt="AZ Suite Logo" 
+        className="h-10 w-auto" 
+      />
     </div>
   );
 };

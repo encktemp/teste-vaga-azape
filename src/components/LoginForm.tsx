@@ -1,14 +1,14 @@
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useNavigate } from 'react-router-dom';
-import { Eye, EyeOff } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import PasswordRecoveryModal from "@/components/auth/PasswordRecoveryModal";
 
 const LoginForm: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email || !password) {
       toast({
         title: "Erro",
@@ -25,27 +25,28 @@ const LoginForm: React.FC = () => {
       });
       return;
     }
-    
+
     setIsLoading(true);
-    
+
     try {
-      // API call would go here
-      // For this example, we'll simulate the API call
-      const response = await new Promise<{ token: string }>((resolve, reject) => {
-        setTimeout(() => {
-          if (email === 'teste@azape.co' && password === '123456') {
-            resolve({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2ZjRlOTZjOGZmZjg1ODhlNiIsImlhdCI6MTY1NDYwN' });
-          } else {
-            reject(new Error('Credenciais inválidas'));
-          }
-        }, 1000);
-      });
-      
-      // Store token in localStorage for future API calls
-      localStorage.setItem('authToken', response.token);
-      
-      // Redirect to dashboard
-      navigate('/dashboard');
+      const response = await new Promise<{ token: string }>(
+        (resolve, reject) => {
+          setTimeout(() => {
+            if (email === "teste@azape.co" && password === "123456") {
+              resolve({
+                token:
+                  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2ZjRlOTZjOGZmZjg1ODhlNiIsImlhdCI6MTY1NDYwN",
+              });
+            } else {
+              reject(new Error("Credenciais inválidas"));
+            }
+          }, 1000);
+        }
+      );
+
+      localStorage.setItem("authToken", response.token);
+
+      navigate("/dashboard");
     } catch (error) {
       toast({
         title: "Erro de autenticação",
@@ -58,10 +59,16 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md animate-fade-in">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full max-w-md animate-fade-in px-4 md:px-8 lg:px-12"
+    >
       <div className="space-y-6">
         <div className="space-y-2">
-          <label htmlFor="email" className="block text-azsuite-coral font-medium">
+          <label
+            htmlFor="email"
+            className="block text-azsuite-coral font-medium"
+          >
             E-mail
           </label>
           <div className="relative">
@@ -76,9 +83,12 @@ const LoginForm: React.FC = () => {
             />
           </div>
         </div>
-        
+
         <div className="space-y-2">
-          <label htmlFor="password" className="block text-azsuite-coral font-medium">
+          <label
+            htmlFor="password"
+            className="block text-azsuite-coral font-medium"
+          >
             Senha
           </label>
           <div className="relative">
@@ -104,13 +114,15 @@ const LoginForm: React.FC = () => {
             </button>
           </div>
         </div>
-        
-        <a href="#" className="block text-sm text-azsuite-coral hover:underline">
-          Esqueci a senha
-        </a>
-        
-        <Button 
-          type="submit" 
+
+        <div>
+          {/* Outros elementos do Login */}
+
+          <PasswordRecoveryModal />
+        </div>
+
+        <Button
+          type="submit"
           className="w-full bg-azsuite-coral hover:bg-azsuite-coral/90 text-white transition-colors duration-200"
           disabled={isLoading}
         >
