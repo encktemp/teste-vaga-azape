@@ -1,36 +1,43 @@
-# Welcome to your Azape project
+# Bem-vindo ao projeto Azape
 
-## Project info
+## Informações do projeto
 
-**URL**: https://github.com/LCM-Sistemas/teste-azape.git
+**URL do Repositório**: [https://github.com/encktemp/teste-vaga-azape.git](https://github.com/encktemp/teste-vaga-azape.git)
 
-## How can I edit this code?
+Este projeto é uma página de **Login** que, ao ser validado, redireciona o usuário para o **Dashboard**. O sistema foi desenvolvido utilizando as seguintes tecnologias:
 
-There are several ways of editing your application.
+- **React.js** 
+- **Vite**
+- **Tailwind CSS**
+- **MongoDB**
 
-**Use Azape**
+## Como posso editar este código?
 
-Simply visit the [Azape Project](https://github.com/LCM-Sistemas/teste-azape.git) and start prompting.
+Existem várias formas de editar sua aplicação.
 
-Changes made via Azape will be committed automatically to this repo.
+### **Usando o Azape**
 
-**Use your preferred IDE**
+Você pode simplesmente acessar o repositório [Teste Vaga Azape](https://github.com/encktemp/teste-vaga-azape.git) e começar a editar.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Azape.
+Alterações feitas diretamente no Azape serão automaticamente comitadas neste repositório.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### **Usando sua IDE preferida**
 
-Follow these steps:
+Se você deseja trabalhar localmente usando sua própria IDE, basta clonar o repositório e enviar as alterações de volta. Alterações enviadas também serão refletidas no Azape.
+
+A única exigência é ter o **Node.js** e **npm** instalados. Caso não tenha, você pode instalar utilizando o [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+Siga os seguintes passos:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Passo 1: Clone o repositório utilizando a URL do projeto.
+git clone https://github.com/encktemp/teste-vaga-azape.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Passo 2: Navegue até o diretório do projeto.
+cd teste-vaga-azape
 
-# Step 3: Install the necessary dependencies.
+# Passo 3: Instale as dependências necessárias.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Passo 4: Inicie o servidor de desenvolvimento com auto-reload e visualização instantânea.
 npm run dev
